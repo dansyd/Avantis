@@ -1,0 +1,13 @@
+<h1>Edit Profile</h1>
+
+<%= render "shared/action_feedback" %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true  %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, :required => true  %>
+
+  <%= f.submit "Update" %>
+<% end %>
