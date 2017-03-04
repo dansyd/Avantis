@@ -13,9 +13,9 @@
 
 class User < ActiveRecord::Base
 
-  has_many :projects, -> {where master: true}
+  has_many :projects
   has_many :tasks
-  has_many :working_projects, through: :tasks
+  has_many :working_projects, through: :tasks, source: :project 
   has_and_belongs_to_many :skills
 
   has_secure_password

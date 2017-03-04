@@ -262,14 +262,17 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         1,
         1,
         1,
         1,
+        1,
         null,
         null,
+        1,
         1,
         2,
         2,
@@ -278,12 +281,6 @@
         null,
         null,
         1,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null,
         1,
         1,
         1,
@@ -371,9 +368,20 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/danielepeviani/Projects/Avantis/Avantis-App/spec/models/skill_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         null,
         1,
@@ -387,6 +395,16 @@
         null
       ],
       "/Users/danielepeviani/Projects/Avantis/Avantis-App/app/models/skill.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         null,
         1,
@@ -394,6 +412,7 @@
         null
       ],
       "/Users/danielepeviani/Projects/Avantis/Avantis-App/spec/models/task_spec.rb": [
+        null,
         null,
         null,
         null,
@@ -420,6 +439,7 @@
         null
       ],
       "/Users/danielepeviani/Projects/Avantis/Avantis-App/app/models/task.rb": [
+        null,
         null,
         null,
         null,
@@ -494,6 +514,6 @@
         null
       ]
     },
-    "timestamp": 1488601913
+    "timestamp": 1488611043
   }
 }

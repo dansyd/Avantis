@@ -14,7 +14,7 @@
 require 'rails_helper'
 
 RSpec.describe Project, type: :model do
-  it { should belong_to :user }
+  it { should belong_to :master }
   it { should have_many :tasks }
 
   it "should have a valid factory" do

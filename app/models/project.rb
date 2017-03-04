@@ -12,6 +12,7 @@
 #
 
 class Project < ActiveRecord::Base
-  belongs_to :user
+  has_many :working_users, through: :tasks, source: :user
+  belongs_to :master, class_name: :User, foreign_key: 'user_id' 
   has_many :tasks
 end
