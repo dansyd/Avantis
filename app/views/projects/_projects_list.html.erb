@@ -1,0 +1,17 @@
+<ul id="projects-list">
+  <% @projects.each do |project| %>
+    <li>
+      <h2><%= project.name %></h2>
+      <p><%= project.desc %></p>
+      <!-- Check if master. Show controls -->
+      <% if @current_user.master? %>
+        <%= render "controls" %>
+      <% end %>
+      <!-- Check if the project has any tasks  -->
+      <% if project.tasks.any? %>
+        <%= render "tasks_list", :project => project %>
+      <% end %>
+
+    </li>
+  <% end %>
+</ul>

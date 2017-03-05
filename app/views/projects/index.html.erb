@@ -1,0 +1,27 @@
+<h1>Open Pojects</h1>
+
+<% if @projects.present? %>
+  <%= render "projects_list" %>
+<% else %>
+  <h2>No projects</h2>
+<% end %>
+
+<% if @current_user.master? %>
+  <%= button_tag "New Project", :id => 'new-project' %>
+<% end %>
+
+
+<div id="new-project-dialog" class="new-project-dialog">
+  <%= form_for :project, :url => new_project_path, :html => {:id => 'form-new-project'} do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true, :autofocus => true %>
+
+    <%= f.label :desc, "Description" %>
+    <%= f.text_area :desc, :required => true, :autofocus => true %>
+
+    <%= f.label :sprint %>
+    <%= f.select :sprint, options_for_select([['1 Week', (Date.today + 1.week)], ['2 Weeks', Date.today + 2.weeks], ['3 Weeks', Date.today + 3.weeks], ['4 Weeks', Date.today + 4.weeks]]) %>
+
+    <%= f.submit "Create" %>
+  <% end %>
+</div>

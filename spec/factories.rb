@@ -18,7 +18,7 @@ FactoryGirl.define do
 
   factory :project do
     name "Avantis"
-    description "Simple app for Agile scrum tracking"
+    desc "Simple app for Agile scrum tracking"
     sprint { Faker::Date.between(2.weeks.from_now, 4.weeks.from_now) }
   end
 

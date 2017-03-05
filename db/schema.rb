@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20170304043102) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
+    t.text     "desc"
     t.date     "sprint"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
   end
 
@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 20170304043102) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.boolean  "master", default: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "master",          default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
