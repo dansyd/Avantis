@@ -1,0 +1,12 @@
+<%= form_for project, :html => {:id => 'form-project'} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true, :id => 'project-name' %>
+
+  <%= f.label :desc, 'Description' %>
+  <%= f.text_area :desc, :required => true, :id => 'project-desc'%>
+
+  <%= f.label :sprint %>
+  <%= f.select :sprint, options_for_select([['1 Week', (Date.today + 1.week)], ['2 Weeks', Date.today + 2.weeks], ['3 Weeks', Date.today + 3.weeks], ['4 Weeks', Date.today + 4.weeks]]), :id => 'project-sprint' %>
+
+  <%= f.submit "Save" %>
+<% end %>

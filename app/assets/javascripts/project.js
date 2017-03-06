@@ -1,45 +1,106 @@
- var project = {
-  createNew: function($form) {
+ var Project = {
+  id: null,
+  name: 'Default name',
+  desc: 'Default desc',
+  sprint: null,
+  mode: '',
 
-    // Let's select and cache all the fields
+  get: function(url, callback) {
+    $.ajax({
+        url: url,
+        type: "get",
+        dataType : "html"
+    }).success(function (response){
+      callback(response);
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+        "The following error occurred: "+
+        textStatus, errorThrown
+      );
+    });
+  },
+
+  createNew: function($form, callback) {
+    var self = this;
+    // Cache all the fields
     var $inputs = $form.find("input, select, button, textarea");
 
     // Serialize the data in the form
     var serializedData = $form.serialize();
 
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
+    // Disable the inputs for the duration of the Ajax request.
     $inputs.prop("disabled", true);
 
-    // Fire off the request
-    request = $.ajax({
+    $.ajax({
         url: "/projects",
         type: "post",
         dataType : "json",
         data: serializedData
+    }).success(function (response){
+      self.id = $.parseJSON(response.project).id;
+      self.name = $.parseJSON(response.project).name;
+      self.desc = $.parseJSON(response.project).desc;
+      self.sprint = $.parseJSON(response.project).sprint;
+      callback();
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
+    }).always(function () {
+      // Reenable the inputs
+      $inputs.prop("disabled", false);
     });
+  },
 
-    // Callback handler that will be called on success
-    request.success(function (response, textStatus, jqXHR){
-      var newProject = "<li><h2>" + $('#project_name').val() + "</h2><p>" + $('#project_desc').val() + "</p></li>";
-      $('#projects-list').append(newProject);
+  delete: function(id, callback) {
+    $.ajax({
+        url: "/projects/" + id,
+        type: "delete",
+        dataType : "json"
+    }).success(function (response){
+      callback();
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
     });
+  },
 
-    // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-    });
+  update: function(id, $form, callback) {
+    var self = this;
+    // Cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
 
-    // Callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-        // Reenable the inputs
-        $inputs.prop("disabled", false);
+    // Serialize the data in the form
+    var serializedData = $form.serialize();
+
+    // Disable the inputs for the duration of the Ajax request.
+    $inputs.prop("disabled", true);
+
+    $.ajax({
+        url: "/projects/" + id,
+        type: "put",
+        dataType : "json",
+        data: serializedData
+    }).success(function (response){
+      self.name = $.parseJSON(response.project).name;
+      self.desc = $.parseJSON(response.project).desc;
+      self.sprint = $.parseJSON(response.project).sprint;
+      callback();
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
+    }).always(function () {
+      // Reenable the inputs
+      $inputs.prop("disabled", false);
     });
   }
 

@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require moment
 //= require project
 //= require_tree .

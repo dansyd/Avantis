@@ -4,8 +4,10 @@ RSpec.describe ProjectsController, type: :controller do
 
   describe "GET to index" do
     before do
+      user = create(:user, :master => true)
       project = create :project
-      get :index
+      user.projects << project
+      get :index, nil, {user_id: user.id}  # get url, params, session
     end
 
     it 'Should respond with a status 200' do
@@ -17,34 +19,10 @@ RSpec.describe ProjectsController, type: :controller do
       expect(response).to render_template('index')
     end
 
-    # context 'when master is logged in' do
-    #   before do
-    #     user = FactoryGirl.create(:user, :master => true)
-    #     project = FactoryGirl.create :project
-    #     user.projects << project
-    #     stub(controller).current_user { user }
-    #   end
-    #
-    #   it 'should disply the master projects' do
-    #     expect(assigns(:projects)).not_to be_nil
-    #   end
-    # end
-
+    it 'should display the master projects' do
+      expect(assigns(:projects)).not_to be_nil
+    end
 
   end
 
-
-  # describe "GET #create" do
-  #   it "returns http success" do
-  #     get :create
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
-  #
-  # describe "GET #destroy" do
-  #   it "returns http success" do
-  #     get :destroy
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
 end
