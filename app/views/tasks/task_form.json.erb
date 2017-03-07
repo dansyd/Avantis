@@ -1,0 +1,13 @@
+<%= form_for task, :html => {:id => 'task-form'} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true, :id => 'task-name' %>
+
+  <%= f.label :desc, 'Description' %>
+  <%= f.text_area :desc, :required => true, :id => 'task-desc'%>
+
+  <%= f.label :points %>
+  <%= f.select :points, options_for_select([['1', '1'], ['2', '2'], ['3', '3'], ['5', '5'], ['8', '8'], ['13', '13'], ['21', '21']], task.points), {}, id: 'task-points' %>
+
+  <%= f.button "Save" %>
+  <%= button_tag 'Cancel', :type => 'button', :id => 'dialog-cancel-btn' %>
+<% end %>

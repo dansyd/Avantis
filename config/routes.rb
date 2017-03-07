@@ -14,6 +14,13 @@
 #      project PATCH  /projects/:id(.:format)      projects#update
 #              PUT    /projects/:id(.:format)      projects#update
 #              DELETE /projects/:id(.:format)      projects#destroy
+#        tasks GET    /tasks(.:format)             tasks#index
+#              POST   /tasks(.:format)             tasks#create
+#     new_task GET    /tasks/new(.:format)         tasks#new
+#    edit_task GET    /tasks/:id/edit(.:format)    tasks#edit
+#         task PATCH  /tasks/:id(.:format)         tasks#update
+#              PUT    /tasks/:id(.:format)         tasks#update
+#              DELETE /tasks/:id(.:format)         tasks#destroy
 #    dashboard GET    /dashboard(.:format)         projects#index
 #        login GET    /login(.:format)             session#new
 #              POST   /login(.:format)             session#create
@@ -24,6 +31,7 @@ Rails.application.routes.draw do
   root :to => 'pages#index'
   resources :users, :only => [:new, :create, :edit, :update]
   resources :projects, :except => [:show]
+  resources :tasks, :except => [:show]
   get '/dashboard' => 'projects#index'
 
   get '/login' => 'session#new'

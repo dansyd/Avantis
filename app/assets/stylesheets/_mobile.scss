@@ -1,0 +1,26 @@
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+button {
+  padding: .8em;
+  background: rgb(177, 177, 177);
+  border: 0;
+}
+
+.form-dialog {
+  padding: 1em;
+  background: rgb(255, 255, 255);
+  box-shadow: 2px 2px 5px rgb(125, 125, 125);
+  top: 50vh;
+  position: absolute;
+  display: none;
+  width: 100%;
+}
+
+input,
+textarea {
+  width: 100%;
+  display: block;
+}

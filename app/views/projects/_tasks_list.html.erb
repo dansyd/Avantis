@@ -1,8 +1,13 @@
-<ul>
+<ul id="tasks-list">
   <% project.tasks.each do |task| %>
-    <li>
-      <h3><%= task.name %></h3>
-      <p><%= task.desc %></p>
+    <li data-id="<%= task.id %>">
+      <h3  class='task-name'><%= task.name %></h3>
+      <p  class='task-desc'><%= task.desc %></p>
+      <p  class='task-points'>Points: <%= task.points %></p>
+      <% if @current_user.master? %>
+        <%= button_tag "Edit", :class => 'edit-task' %>
+        <%= button_tag "Delete", :class => 'delete-task' %>
+      <% end %>
     </li>
   <% end %>
 </ul>

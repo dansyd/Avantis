@@ -1,8 +1,9 @@
- var Project = {
+ var Task = {
   id: null,
   name: 'Default name',
   desc: 'Default desc',
-  sprint: null,
+  points: null,
+  projectId: null,
   mode: '',
 
   // Send request for new action to get form partial from rails.
@@ -28,21 +29,23 @@
     var $inputs = $form.find("input, select, button, textarea");
 
     // Serialize the data in the form
-    var serializedData = $form.serialize();
+    var serializedData = $form.serializeArray();
+    console.log(serializedData);
+    serializedData.push({name: 'task[project_id]', value: self.project_id});
 
     // Disable the inputs for the duration of the Ajax request.
     $inputs.prop("disabled", true);
 
     $.ajax({
-        url: "/projects",
+        url: "/tasks",
         type: "post",
         dataType : "json",
         data: serializedData
     }).success(function (response){
-      self.id = $.parseJSON(response.project).id;
-      self.name = $.parseJSON(response.project).name;
-      self.desc = $.parseJSON(response.project).desc;
-      self.sprint = $.parseJSON(response.project).sprint;
+      self.id = $.parseJSON(response.task).id;
+      self.name = $.parseJSON(response.task).name;
+      self.desc = $.parseJSON(response.task).desc;
+      self.points = $.parseJSON(response.task).points;
       callback();
     }).fail(function (jqXHR, textStatus, errorThrown){
       // Log the error to the console
@@ -58,7 +61,7 @@
 
   delete: function(id, callback) {
     $.ajax({
-        url: "/projects/" + id,
+        url: "/tasks/" + id,
         type: "delete",
         dataType : "json"
     }).success(function (response){
@@ -84,14 +87,14 @@
     $inputs.prop("disabled", true);
 
     $.ajax({
-        url: "/projects/" + id,
+        url: "/tasks/" + id,
         type: "put",
         dataType : "json",
         data: serializedData
     }).success(function (response){
-      self.name = $.parseJSON(response.project).name;
-      self.desc = $.parseJSON(response.project).desc;
-      self.sprint = $.parseJSON(response.project).sprint;
+      self.name = $.parseJSON(response.task).name;
+      self.desc = $.parseJSON(response.task).desc;
+      self.points = $.parseJSON(response.task).points;
       callback();
     }).fail(function (jqXHR, textStatus, errorThrown){
       // Log the error to the console

@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   def new
     project = Project.new
     respond_to do |format|
-      format.json { render "form", :locals => { :project=> project} }
+      format.json { render "project_form", :locals => { :project=> project} }
     end
   end
 
@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
   def edit
     project = Project.find params[:id]
     respond_to do |format|
-      format.json { render "form", :locals => { :project=> project} }
+      format.json { render "project_form", :locals => { :project=> project} }
     end
   end
 
