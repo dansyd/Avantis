@@ -1,14 +1,18 @@
 <h1>Open Pojects</h1>
 
-<% if @projects.present? %>
-  <%= render "projects_list" %>
-<% else %>
-  <h2>No projects</h2>
-<% end %>
+<div class="projects-wrapper">
+  <% if @projects.present? %>
+    <%= render "projects_list" %>
+  <% else %>
+    <h2>No projects</h2>
+  <% end %>
 
-<% if @current_user.master? %>
-  <%= button_tag "New Project", :id => 'new-project' %>
-<% end %>
+  <% if @current_user.master? %>
+    <%= button_tag "New Project", :id => 'new-project' %>
+  <% end %>
+</div>
 
 <!-- Form container for new projects/tasks -->
-<div id="form-dialog" class="form-dialog"></div>
+<div class="form-dialog-container">
+  <div id="form-dialog" class="form-dialog"></div>  
+</div>

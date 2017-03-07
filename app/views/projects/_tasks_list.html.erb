@@ -1,6 +1,6 @@
-<ul id="tasks-list">
+<ul class="tasks-list">
   <% project.tasks.each do |task| %>
-    <li data-id="<%= task.id %>">
+    <li data-id="<%= task.id %>" class="task-item">
       <h3  class='task-name'><%= task.name %></h3>
       <p  class='task-desc'><%= task.desc %></p>
       <p  class='task-points'>Points: <%= task.points %></p>

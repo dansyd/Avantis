@@ -30,7 +30,6 @@
 
     // Serialize the data in the form
     var serializedData = $form.serializeArray();
-    console.log(serializedData);
     serializedData.push({name: 'task[project_id]', value: self.project_id});
 
     // Disable the inputs for the duration of the Ajax request.
