@@ -34,6 +34,9 @@ Rails.application.routes.draw do
   resources :tasks, :except => [:show]
   get '/dashboard' => 'projects#index'
 
+  get 'projects/:id/member/add' => 'projects#add_member'
+  post 'projects/member/add' => 'projects#save_members'
+
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'

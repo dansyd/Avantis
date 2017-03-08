@@ -103,6 +103,38 @@
       // Reenable the inputs
       $inputs.prop("disabled", false);
     });
-  }
+  },
+
+  addMembers: function(projectId, $form, callback) {
+    var self = this;
+    // Cache all the fields
+    var $inputs = $form.find("input, button");
+
+    // Disable the inputs for the duration of the Ajax request.
+    $inputs.prop("disabled", true);
+
+    var data = {
+      user_ids: $form.find('input:checked').map(function(){ return $(this).val() }).get(),
+      project_id: projectId
+    }
+
+    $.ajax({
+        url: "/projects/member/add",
+        type: "post",
+        dataType : "json",
+        data: data
+    }).success(function (response){
+      callback(response.users);
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
+    }).always(function () {
+      // Reenable the inputs
+      $inputs.prop("disabled", false);
+    });
+  },
 
  }

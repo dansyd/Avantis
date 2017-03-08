@@ -58,6 +58,30 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def add_member
+    project = Project.find params[:id]
+    team = project.working_users
+    users = User.where('master = false')
+    available_users = users - team
+    respond_to do |format|
+      format.json { render "add_member_form", :locals => { :available_users => available_users } }
+    end
+  end
+
+  def save_members
+    user_ids = params[:user_ids]
+    response = []
+    user_ids.each do |id|
+      user = User.find id
+      response << user.name
+      project = Project.find params[:project_id]
+      project.working_users << user
+    end
+    respond_to do |format|
+      format.json { render :json => {status: :ok, users: response} }
+    end
+  end
+
   private
   def project_params
     params.require(:project).permit(:name, :desc, :sprint)

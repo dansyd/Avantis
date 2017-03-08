@@ -1,0 +1,13 @@
+<% if available_users.any? %>
+  <%= form_tag 'projects/member/add', :id => 'add-member-form' do %>
+    <% available_users.each do |user| %>
+      <%= label_tag user.id, user.name, :class => 'team-member-label' %>
+      <%= check_box_tag user.id, user.id, false, :class => 'team-member' %>
+    <% end %>
+    <%= button_tag 'Save' %>
+    <%= button_tag 'Cancel', :type => 'button', :id => 'dialog-cancel-btn' %>
+  <% end %>
+<% else %>
+  <h2>All the team members have been assigned to this project</h2>
+  <%= button_tag 'Cancel', :type => 'button', :id => 'dialog-cancel-btn' %>
+<% end %>

@@ -8,7 +8,6 @@ $(document).ready(function() {
 
   // New project btn click with event delegation for newly added projects
   $('#new-project').on('click', function(e) {
-    e.preventDefault();
     project.getForm('/projects/new',function(res) {
       $('#form-dialog').html('<h2>New Project</h2>' + res);
       showForm();
@@ -43,9 +42,7 @@ $(document).ready(function() {
               .text(moment(project.sprint).diff(moment().startOf('day'), 'days'));
       });
     };
-    $('.form-dialog-container').fadeOut(500, function() {
-      $('#form-dialog').empty();
-    });
+    closeForm();
   });
 
   // Delete project with event delegation
@@ -64,6 +61,38 @@ $(document).ready(function() {
     }
   });
 
+  // Add member to project with event delegation
+  $('.projects-wrapper').on('click', '.add-member-project', function() {
+    project.id = $(this).closest('li.project-item').data('id');
+    project.getForm('/projects/' + project.id + '/member/add',function(res) {
+      $('#form-dialog').html(res);
+      showForm();
+    });
+  });
+
+  $('#form-dialog').on('submit', '#add-member-form', function(e) {
+    e.preventDefault();
+    project.addMembers(project.id, $(this),function(res) {
+      var $projectItem = $('li[data-id="' + project.id + '"]');
+      var $teamElement = $projectItem.find('p.project-team');
+      var $newMember = '';
+      if ($teamElement.length === 0) {
+        $newMember = '<p class="project-team">Team: ';
+        $(res).each(function(index, name) {
+          $newMember += '<span>' + name + '</span> ';
+        });
+        $newMember += '</p>';
+        $projectItem.find('p.project-sprint').after($newMember);
+      }else {
+        $(res).each(function(index, name) {
+          $newMember += '<span>' + name + '</span>';
+        });
+        $teamElement.append($newMember);
+      };
+      closeForm();
+    });
+  });
+
   // Generate new project element
   function createNewProjectElement() {
     var $projectsList = $('#projects-list');
@@ -77,10 +106,10 @@ $(document).ready(function() {
       + "<p class='project-sprint'>Sprint(days left): <span>" + moment(project.sprint).diff(moment().startOf('day'), 'days') + "</span></p>"
       + "<button name='button' type='submit' class='edit-project'>Edit</button>"
       + " <button name='button' type='submit' class='delete-project'>Delete</button>"
-      + " <button name='button' type='submit' class='add-member-projec'>Add Member</button>"
+      + " <button name='button' type='submit' class='add-member-project'>Add Members</button>"
       + " <button name='button' type='submit' id='new-task'>New Task</button>"
     + "</li>";
-  }
+  };
 
   // *************************************
   // TASKS
@@ -90,7 +119,6 @@ $(document).ready(function() {
 
   // New task btn click with event delegation for newly added projects
   $('.projects-wrapper').on('click', '#new-task', function(e) {
-    e.preventDefault();
     task.getForm('/tasks/new',function(res) {
       $('#form-dialog').html('<h2>New Task</h2>' + res);
       showForm();
@@ -126,9 +154,7 @@ $(document).ready(function() {
         $('.tasks-list li[data-id="' + task.id + '"] .task-points').text('Points: ' + task.points);
       });
     };
-    $('.form-dialog-container').fadeOut(500, function() {
-      $('#form-dialog').empty();
-    });
+    closeForm();
   });
 
   // Delete task with event delegation
@@ -159,7 +185,7 @@ $(document).ready(function() {
       + "<button name='button' type='submit' class='edit-task'>Edit</button>"
       + " <button name='button' type='submit' class='delete-task'>Delete</button>"
     + "</li>";
-  }
+  };
 
   // *************************************
   // HELPERS
@@ -167,13 +193,22 @@ $(document).ready(function() {
 
   // Close form dialog
   $('#form-dialog').on('click', '#dialog-cancel-btn', function() {
-    $('.form-dialog-container').fadeOut(100, function() {
-      $('#form-dialog').empty();
-    });
+    closeForm();
+  });
+
+  // UI feedback when selecting available users
+  $('#form-dialog').on('click','.team-member-label', function() {
+    $(this).toggleClass('available-user-selected');
   });
 
   function showForm() {
     $('.form-dialog-container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 100);
+  };
+
+  function closeForm() {
+    $('.form-dialog-container').fadeOut(100, function() {
+      $('#form-dialog').empty();
+    });
   }
 
 });

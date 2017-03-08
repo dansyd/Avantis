@@ -18,7 +18,7 @@
       <% if @current_user.master? %>
         <%= button_tag "Edit", :class => 'edit-project' %>
         <%= button_tag "Delete", :class => 'delete-project' %>
-        <%= button_tag "Add Member", :class => 'add-member-project' %>
+        <%= button_tag "Add Members", :class => 'add-member-project' %>
       <% end %>
       <!-- Check if the project has any tasks  -->
       <% if project.tasks.any? %>
