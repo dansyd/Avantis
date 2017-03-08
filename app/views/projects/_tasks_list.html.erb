@@ -1,12 +1,30 @@
 <ul class="tasks-list">
   <% project.tasks.each do |task| %>
     <li data-id="<%= task.id %>" class="task-item">
-      <h3  class='task-name'><%= task.name %></h3>
-      <p  class='task-desc'><%= task.desc %></p>
-      <p  class='task-points'>Points: <%= task.points %></p>
+      <h3 class='task-name'><%= task.name %></h3>
+      <p class='task-desc'><%= task.desc %></p>
+      <p class='task-points'>Points: <%= task.points %></p>
+      <% if task.complete %>
+        <h3 class="task-status">Completed</h3>
+      <% elsif  task.user.present? && task.user != @current_user %>
+        <p class="task-status">Taken by: <%= task.user.name %></p>
+      <% elsif !@current_user.master %>
+        <div class="task-controls">
+          <% if task.user == @current_user %>
+            <%= button_tag 'Release', :class => 'release-task' %>
+            <%= button_tag 'Mark as complete', :class => 'complete-task' %>
+          <% else %>
+            <%= button_tag 'Take', :class => 'take-task' %>
+          <% end %>
+        </div>
+      <% end %>
+
       <% if @current_user.master? %>
-        <%= button_tag "Edit", :class => 'edit-task' %>
-        <%= button_tag "Delete", :class => 'delete-task' %>
+        <% if task.complete %>
+          <%= button_tag 'Reopen', :class => 'reopen-task' %>
+        <% end %>
+        <%= button_tag 'Edit', :class => 'edit-task' %>
+        <%= button_tag 'Delete', :class => 'delete-task' %>
       <% end %>
     </li>
   <% end %>

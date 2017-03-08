@@ -37,6 +37,12 @@ Rails.application.routes.draw do
   get 'projects/:id/member/add' => 'projects#add_member'
   post 'projects/member/add' => 'projects#save_members'
 
+  # Check with Joel what method these should be
+  post 'tasks/take' => 'tasks#take'
+  post 'tasks/release' => 'tasks#release'
+  post 'tasks/complete' => 'tasks#complete'
+  post 'tasks/reopen' => 'tasks#reopen'
+
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'

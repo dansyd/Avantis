@@ -61,7 +61,29 @@ $(document).ready(function() {
     }
   });
 
-  // Add member to project with event delegation
+  // Generate new project element
+  function createNewProjectElement() {
+    var $projectsList = $('#projects-list');
+    if ($projectsList.length === 0) {
+      $('.projects-wrapper h2').remove();
+      $('#new-project').before('<ul id="projects-list"></ul>');
+    };
+    return "<li data-id='" + project.id + "' class='project-item'>"
+      + "<h2 class='project-name'>" + project.name + "</h2>"
+      + "<p class='project-desc'>" + project.desc + "</p>"
+      + "<p class='project-sprint'>Sprint(days left): <span>" + moment(project.sprint).diff(moment().startOf('day'), 'days') + "</span></p>"
+      + "<button name='button' type='submit' class='edit-project'>Edit</button>"
+      + " <button name='button' type='submit' class='delete-project'>Delete</button>"
+      + " <button name='button' type='submit' class='add-member-project'>Add Members</button>"
+      + " <button name='button' type='submit' id='new-task'>New Task</button>"
+    + "</li>";
+  };
+
+  // *************************************
+  // MEMBERS - PROJECT
+  // *************************************
+
+  // Add member to project btn click with event delegation
   $('.projects-wrapper').on('click', '.add-member-project', function() {
     project.id = $(this).closest('li.project-item').data('id');
     project.getForm('/projects/' + project.id + '/member/add',function(res) {
@@ -70,6 +92,7 @@ $(document).ready(function() {
     });
   });
 
+  // Save new members in db
   $('#form-dialog').on('submit', '#add-member-form', function(e) {
     e.preventDefault();
     project.addMembers(project.id, $(this),function(res) {
@@ -92,24 +115,6 @@ $(document).ready(function() {
       closeForm();
     });
   });
-
-  // Generate new project element
-  function createNewProjectElement() {
-    var $projectsList = $('#projects-list');
-    if ($projectsList.length === 0) {
-      $('.projects-wrapper h2').remove();
-      $('#new-project').before('<ul id="projects-list"></ul>');
-    };
-    return "<li data-id='" + project.id + "' class='project-item'>"
-      + "<h2 class='project-name'>" + project.name + "</h2>"
-      + "<p class='project-desc'>" + project.desc + "</p>"
-      + "<p class='project-sprint'>Sprint(days left): <span>" + moment(project.sprint).diff(moment().startOf('day'), 'days') + "</span></p>"
-      + "<button name='button' type='submit' class='edit-project'>Edit</button>"
-      + " <button name='button' type='submit' class='delete-project'>Delete</button>"
-      + " <button name='button' type='submit' class='add-member-project'>Add Members</button>"
-      + " <button name='button' type='submit' id='new-task'>New Task</button>"
-    + "</li>";
-  };
 
   // *************************************
   // TASKS
@@ -172,6 +177,18 @@ $(document).ready(function() {
     }
   });
 
+  // Reopen a completed task
+  $('.reopen-task').on('click', function() {
+    var $taskElement = $(this).closest('li.task-item');
+    task.id = $taskElement.data('id');
+    task.reopen(function(memberName) {
+      var $taskStatus = '<p class="task-status">Taken by: ' + memberName + '</p>';
+      $taskElement.find('.task-status').remove();
+      $taskElement.find('.task-points').after($taskStatus);
+      $taskElement.find('.reopen-task').remove();
+    });
+  });
+
   // Generate new task element
   function createNewTaskElement($projectParent) {
     if ($projectParent.find('ul').length === 0) {
@@ -186,6 +203,41 @@ $(document).ready(function() {
       + " <button name='button' type='submit' class='delete-task'>Delete</button>"
     + "</li>";
   };
+
+  // *************************************
+  // MEMBERS - TASK
+  // *************************************
+
+  // Take task
+  $('.tasks-list').on('click', '.take-task', function() {
+    task.id = $(this).closest('li.task-item').data('id');
+    var $taskControls = $(this).closest('.task-controls');
+    task.take(function() {
+      var $newControls = '<button name="button" type="submit" class="release-task">Release</button> '
+      + '<button name="button" type="submit" class="complete-task">Mark as complete</button>';
+      $taskControls.empty().append($newControls);
+    });
+  });
+
+  // Release task
+  $('.tasks-list').on('click', '.release-task', function() {
+    task.id = $(this).closest('li.task-item').data('id');
+    var $taskControls = $(this).closest('.task-controls');
+    task.release(function() {
+      var $newControls = '<button name="button" type="submit" class="take-task">Take</button>';
+      $taskControls.empty().append($newControls);
+    });
+  });
+
+  // Complete task
+  $('.tasks-list').on('click', '.complete-task', function() {
+    task.id = $(this).closest('li.task-item').data('id');
+    var $taskControls = $(this).closest('.task-controls');
+    task.complete(function() {
+      var $newControls = '<h3>Completed</h3>';
+      $taskControls.empty().append($newControls);
+    });
+  });
 
   // *************************************
   // HELPERS

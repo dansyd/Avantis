@@ -105,6 +105,75 @@
       // Reenable the inputs
       $inputs.prop("disabled", false);
     });
+  },
+
+  take: function(callback) {
+    $.ajax({
+        url: "/tasks/take",
+        type: "post",
+        dataType : "json",
+        data: { task_id: this.id }
+    }).success(function (response){
+      callback();
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
+    });
+  },
+
+  release: function(callback) {
+    $.ajax({
+        url: "/tasks/release",
+        type: "post",
+        dataType : "json",
+        data: { task_id: this.id }
+    }).success(function (response){
+      callback();
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
+    });
+  },
+
+  complete: function(callback) {
+    $.ajax({
+        url: "/tasks/complete",
+        type: "post",
+        dataType : "json",
+        data: { task_id: this.id }
+    }).success(function (response){
+      callback();
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
+    });
+  },
+
+  reopen: function(callback) {
+    $.ajax({
+        url: "/tasks/reopen",
+        type: "post",
+        dataType : "json",
+        data: { task_id: this.id }
+    }).success(function (response){
+      callback(response.user.name);
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
+    });
   }
+
 
  }
