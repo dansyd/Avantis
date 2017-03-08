@@ -71,7 +71,15 @@ $(document).ready(function() {
       $('.projects-wrapper h2').remove();
       $('#new-project').before('<ul id="projects-list"></ul>');
     };
-    return "<li data-id='" + project.id + "' class='project-item'><h2 class='project-name'>" + project.name + "</h2><p class='project-desc'>" + project.desc + "</p><p class='project-sprint'>Sprint(days left): <span>" + moment(project.sprint).diff(moment().startOf('day'), 'days') + "</span></p><button name='button' type='submit' class='edit-project'>Edit</button> <button name='button' type='submit' class='delete-project'>Delete</button><button name='button' type='submit' id='new-task'>New Task</button></li>";
+    return "<li data-id='" + project.id + "' class='project-item'>"
+      + "<h2 class='project-name'>" + project.name + "</h2>"
+      + "<p class='project-desc'>" + project.desc + "</p>"
+      + "<p class='project-sprint'>Sprint(days left): <span>" + moment(project.sprint).diff(moment().startOf('day'), 'days') + "</span></p>"
+      + "<button name='button' type='submit' class='edit-project'>Edit</button>"
+      + " <button name='button' type='submit' class='delete-project'>Delete</button>"
+      + " <button name='button' type='submit' class='add-member-projec'>Add Member</button>"
+      + " <button name='button' type='submit' id='new-task'>New Task</button>"
+    + "</li>";
   }
 
   // *************************************
@@ -96,7 +104,7 @@ $(document).ready(function() {
     var $taskElement = $(this).closest('li.task-item');
     task.id = $taskElement.data('id');
     task.getForm('/tasks/'+ task.id +'/edit',function(res) {
-      $('#form-dialog').html('<h2>Edit Task</h2>' + res).appendTo($taskElement);
+      $('#form-dialog').html('<h2>Edit Task</h2>' + res);
       showForm();
     });
     task.mode = 'edit';
@@ -129,7 +137,11 @@ $(document).ready(function() {
       var $taskElement = $(this).closest('li.task-item');
       task.id = $taskElement.data('id');
       task.delete(task.id, function() {
-        $taskElement.remove();
+        if ($taskElement.closest('ul.tasks-list').children().length === 1) {
+          $taskElement.closest('ul.tasks-list').remove();
+        } else {
+          $taskElement.remove();
+        }
       });
     }
   });
@@ -140,7 +152,13 @@ $(document).ready(function() {
       var $tasksList = $('<ul class="tasks-list"></ul>');
       $projectParent.find('#new-task').before($tasksList);
     };
-    return "<li data-id='" + task.id + "' class='task-item'><h3 class='task-name'>" + task.name + "</h3><p class='task-desc'>" + task.desc + "</p><p class='task-points'>Points: " + task.points + "</p><button name='button' type='submit' class='edit-task'>Edit</button> <button name='button' type='submit' class='delete-task'>Delete</button></li>";
+    return "<li data-id='" + task.id + "' class='task-item'>"
+      + "<h3 class='task-name'>" + task.name + "</h3>"
+      + "<p class='task-desc'>" + task.desc + "</p>"
+      + "<p class='task-points'>Points: " + task.points + "</p>"
+      + "<button name='button' type='submit' class='edit-task'>Edit</button>"
+      + " <button name='button' type='submit' class='delete-task'>Delete</button>"
+    + "</li>";
   }
 
   // *************************************

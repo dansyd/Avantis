@@ -12,7 +12,7 @@
 #
 
 class Project < ActiveRecord::Base
-  has_many :working_users, through: :tasks, source: :user
-  belongs_to :master, class_name: :User, foreign_key: 'user_id'
+  has_and_belongs_to_many :working_users, -> { where master: false }, class_name: 'User'
+  has_and_belongs_to_many :master, -> { where master: true }, class_name: 'User'
   has_many :tasks, dependent: :destroy
 end

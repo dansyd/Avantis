@@ -4,10 +4,21 @@
       <h2 class="project-name"><%= project.name %></h2>
       <p class="project-desc"><%= project.desc %></p>
       <p class="project-sprint">Sprint(days left): <span><%= (project.sprint - Date.today).to_i %></span></p>
+
+      <!-- List all users working on the project, if any -->
+      <% if project.working_users.any? %>
+        <p class="project-team">Team:
+          <% project.working_users.each do |user| %>
+            <span><%= user.name %></span>
+          <% end %>
+        </p>
+      <% end %>
+
       <!-- Check if master. Show controls -->
       <% if @current_user.master? %>
         <%= button_tag "Edit", :class => 'edit-project' %>
         <%= button_tag "Delete", :class => 'delete-project' %>
+        <%= button_tag "Add Member", :class => 'add-member-project' %>
       <% end %>
       <!-- Check if the project has any tasks  -->
       <% if project.tasks.any? %>

@@ -20,5 +20,6 @@ t1 = Task.create :name => 'Test associations', :desc => 'This fucking shit doesn
 # Associations
 
 u2.tasks << t1
+u2.projects << p1
 p1.tasks << t1
 u1.projects << p1
