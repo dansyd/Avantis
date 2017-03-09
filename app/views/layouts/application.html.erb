@@ -7,25 +7,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<div class="container">
-  <nav>
-    <%= link_to "Home", root_path  %>
-    <% if @current_user.present? %>
-      <%= link_to @current_user.name, edit_user_path(@current_user)  %>
-      <%= link_to "Dashboard", dashboard_path  %>
-      <%= link_to "Logout", login_path, :method => 'delete'%>
-    <% else %>
-      <%= link_to "Sign Up", new_user_path  %>
-      <%= link_to "Sign In", login_path  %>
-    <% end %>
-  </nav>
+  <body>
+
+  <header>
+    <div class="header-wrapper">
+      <div class="logo">
+        AVANTIS
+      </div>
+      <nav>
+        <%= link_to "Home", root_path, :class => 'menu-item' %>
+        <% if @current_user.present? %>
+          <%= link_to @current_user.name, edit_user_path(@current_user), :class => 'menu-item'  %>
+          <%= link_to "Dashboard", dashboard_path, :class => 'menu-item'  %>
+          <%= link_to "Logout", login_path, :method => 'delete', :class => 'menu-item'%>
+        <% else %>
+          <%= link_to "Sign Up", new_user_path, :class => 'menu-item' %>
+          <%= link_to "Sign In", login_path, :class => 'menu-item' %>
+        <% end %>
+      </nav>
+      <div id="toggle">
+        <div class="span" id="one"></div>
+        <div class="span" id="two"></div>
+        <div class="span" id="three"></div>
+      </div>
+      <div id="resize">
+        <nav>
+          <%= link_to "Home", root_path, :class => 'menu-item' %>
+          <% if @current_user.present? %>
+            <%= link_to @current_user.name, edit_user_path(@current_user), :class => 'menu-item'  %>
+            <%= link_to "Dashboard", dashboard_path, :class => 'menu-item'  %>
+            <%= link_to "Logout", login_path, :method => 'delete', :class => 'menu-item'%>
+          <% else %>
+            <%= link_to "Sign Up", new_user_path, :class => 'menu-item' %>
+            <%= link_to "Sign In", login_path, :class => 'menu-item' %>
+          <% end %>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
 
 
-  <%= yield %>
-</div>
-
+  <footer>
+    <div class="footer-wrapper">
+      <p>some text</p>
+      <p>dlsjfsjkdfbjds</p>
+    </div>
+  </footer>
 
 </body>
+
 </html>

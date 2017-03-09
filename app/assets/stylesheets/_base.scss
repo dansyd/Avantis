@@ -1,0 +1,127 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Domine|Montserrat:300');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Domine', serif;
+  font-size: 16px;
+  height: 100vh;
+  background-color: $primary-blue;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+}
+.container {
+  // display: flex;
+  // flex: 1;
+  // justify-content: center;
+  // align-items: center;
+}
+
+// ****************************
+// HEADER
+// ****************************
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-wrapper {
+  min-width: $container-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+
+}
+
+nav {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.menu-item {
+  display: inline-block;
+  margin: $main-spacing 0;
+  padding: $small-spacing;
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+}
+
+
+.flex-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0vh;
+  left: 0vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-box {
+  border-radius: 4px;
+  color: $primary-slate;
+  padding: $big-spacing;
+  background-color: white;
+  box-shadow: 0px 5px 20px darken($primary-slate, 20);
+}
+
+input {
+  margin: $small-spacing 0 $big-spacing 0;
+  padding: $small-spacing;
+  display: block;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+  width: 100%;
+}
+
+button,
+input[type='submit'] {
+  padding: $small-spacing $main-spacing;
+  background: $primary-green;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 darken($primary-green, 20);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}

@@ -1,15 +1,17 @@
-<h1>Sign In</h1>
-
 <%= render "shared/action_feedback" %>
 
-<%= form_tag login_path do %>
+<div class="login-wrapper">
+  <h1>Sign In</h1>
 
-  <%= label_tag 'Email' %>
-  <%= email_field_tag :email, nil, :autofocus => true %>
+  <%= form_tag login_path, :class => 'login-form' do %>
 
-  <%= label_tag 'Password' %>
-  <%= password_field_tag :password %>
+    <%= label_tag 'Email' %>
+    <%= email_field_tag :email, nil, :autofocus => true %>
 
-  <%= submit_tag "Sign In" %>
+    <%= label_tag 'Password' %>
+    <%= password_field_tag :password %>
 
-<% end %>
+    <%= submit_tag "Sign In" %>
+
+  <% end %>
+</div>
