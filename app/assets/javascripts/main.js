@@ -68,8 +68,8 @@ $(document).ready(function() {
 
   // Generate new project element
   function createNewProjectElement() {
-    var $projectsList = $('#projects-list');
-    if ($projectsList.length === 0) {
+    var $projectItems = $('#projects-list li');
+    if ($projectItems.length === 0) {
       $('.projects-wrapper h2').remove();
       $('#new-project').before('<ul id="projects-list" class="projects-list"></ul>');
     };
@@ -81,8 +81,8 @@ $(document).ready(function() {
         + "<div class='project-team'><button name='button' type='submit' class='add-member-project'>+</button></div>"
         + "<button name='button' type='submit' class='edit-project'>Edit</button>"
         + " <button name='button' type='submit' class='delete-project'>Delete</button>"
-        + " <button name='button' type='submit' id='new-task'>New Task</button>"
       + "</div>"
+      + "<button name='button' type='submit' id='new-task' class='new-task-btn'>New Task</button>"
     + "</li>";
   };
 
@@ -103,23 +103,14 @@ $(document).ready(function() {
   $('#form-dialog').on('submit', '#add-member-form', function(e) {
     e.preventDefault();
     project.addMembers(project.id, $(this),function(res) {
-      var $projectItem = $('li[data-id="' + project.id + '"]');
-      var $teamElement = $projectItem.find('p.project-team');
-      var $newMember = '';
-      if ($teamElement.length === 0) {
-        $newMember = '<p class="project-team">Team: ';
-        $(res).each(function(index, name) {
-          $newMember += '<span>' + name + '</span> ';
-        });
-        $newMember += '</p>';
-        $projectItem.find('p.project-sprint').after($newMember);
-      }else {
-        $(res).each(function(index, name) {
-          $newMember += '<span>' + name + '</span>';
-        });
-        $teamElement.append($newMember);
-      };
-      closeForm();
+    var $projectItem = $('li[data-id="' + project.id + '"]');
+    var $teamElement = $projectItem.find('p.project-team');
+    var $newMember = '';
+    $(res).each(function(index, avatarUrl) {
+      $newMember += '<div class="team-member-avatar" style="background-image: url(' + avatarUrl +');"></div>';
+    });
+    $projectItem.find('button.add-member-project').before($newMember);
+    closeForm();
     });
   });
 
@@ -198,7 +189,7 @@ $(document).ready(function() {
 
   // Generate new task element
   function createNewTaskElement($projectParent) {
-    if ($projectParent.find('ul').length === 0) {
+    if ($projectParent.find('ul.tasks-list').length === 0) {
       var $tasksList = $('<ul class="tasks-list"></ul>');
       $projectParent.find('#new-task').before($tasksList);
     };
@@ -257,7 +248,7 @@ $(document).ready(function() {
 
   // UI feedback when selecting available users
   $('#form-dialog').on('click','.team-member-label', function() {
-    $(this).toggleClass('available-user-selected');
+    $(this).find('div').toggleClass('team-member-selected');
   });
 
   function showForm() {

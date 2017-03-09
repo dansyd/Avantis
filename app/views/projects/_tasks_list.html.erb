@@ -7,7 +7,7 @@
       <% if task.complete %>
         <h3 class="task-status">Completed</h3>
       <% elsif  task.user.present? && task.user != @current_user %>
-        <p class="task-status">Taken by: <%= task.user.name %></p>
+        <div class="task-status"><span>Taken by: </span><div class="team-member-avatar" style="background-image: url('<%= cloudinary_url task.user.avatar %>');"></div></div>
       <% elsif !@current_user.master %>
         <div class="task-controls">
           <% if task.user == @current_user %>

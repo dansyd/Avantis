@@ -1,12 +1,17 @@
 <% if available_users.any? %>
   <%= form_tag 'projects/member/add', :id => 'add-member-form' do %>
-    <% available_users.each do |user| %>
-      <%= label_tag user.id, user.name, :class => 'team-member-label' %>
-      <%= check_box_tag user.id, user.id, false, :class => 'team-member' %>
-    <% end %>
-    <%= button_tag 'Save' %>
-    <%= button_tag 'Cancel', :type => 'button', :id => 'dialog-cancel-btn' %>
+    <div class="available-users">
+      <% available_users.each do |user| %>
+        <% avatar_url = cloudinary_url user.avatar %>
+        <%= label_tag user.id, content_tag(:div, nil, style: "background-image: url(#{avatar_url})", class: "team-member-deselected"), :class => 'team-member-label' %>
+        <%= check_box_tag user.id, user.id, false, :class => 'team-member' %>
+      <% end %>
+    </div>
+      <%= button_tag 'Save' %>
+      <%= button_tag 'Cancel', :type => 'button', :id => 'dialog-cancel-btn' %>
   <% end %>
+
+
 <% else %>
   <h2>All team members have been assigned to this project</h2>
   <%= button_tag 'Cancel', :type => 'button', :id => 'dialog-cancel-btn' %>

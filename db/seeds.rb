@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-u1 = User.create :name => 'Joe Black', :avatar => 'avantis-app/47.jpg', :email => 'admin@myco.com', :password => 'admin', :password_confirmation => 'admin', :master => true
+u1 = User.create :name => 'Joe Black', :avatar => 'avantis-app/47.jpg', :email => 'admin@admin.com', :password => 'admin', :password_confirmation => 'admin', :master => true
 u2 = User.create :name => 'Luis Long', :avatar => 'avantis-app/57.jpg', :email => 'luis.long17@example.com', :password => 'chicken', :password_confirmation => 'chicken', :master => false
 u3 = User.create :name => 'Rodney Bailey', :avatar => 'avantis-app/3.jpg', :email => 'rodney.bailey78@example.com', :password => 'chicken', :password_confirmation => 'chicken', :master => false
 u4 = User.create :name => 'Marsha Watts', :avatar => 'avantis-app/49.jpg', :email => 'marsha.watts79@example.com', :password => 'chicken', :password_confirmation => 'chicken', :master => false

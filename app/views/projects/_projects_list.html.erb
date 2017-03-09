@@ -7,16 +7,16 @@
         <p class="project-sprint">Sprint (days left): <span><%= (project.sprint - Date.today).to_i %></span></p>
 
         <!-- List all users working on the project, if any -->
-        <% if project.working_users.any? %>
-          <div class="project-team">
+        <div class="project-team">
+          <% if project.working_users.any? %>
             <% project.working_users.each do |user| %>
               <div class="team-member-avatar" style="background-image: url('<%= cloudinary_url user.avatar %>');"></div>
             <% end %>
-            <% if @current_user.master? %>
-              <%= button_tag "+", :class => 'add-member-project' %>
-            <% end %>
-          </div>
-        <% end %>
+          <% end %>
+          <% if @current_user.master? %>
+            <%= button_tag "+", :class => 'add-member-project' %>
+          <% end %>
+        </div>
 
         <!-- Check if master. Show controls -->
         <% if @current_user.master? %>

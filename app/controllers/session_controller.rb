@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     if user.present?
       if user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect_to root_path
+        redirect_to projects_path
       else
         flash[:error] = "Invalid password. Please try again."
         redirect_to login_path

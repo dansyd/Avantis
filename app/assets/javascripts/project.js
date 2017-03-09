@@ -124,7 +124,7 @@
         dataType : "json",
         data: data
     }).success(function (response){
-      callback(response.users);
+      callback(response.avatars);
     }).fail(function (jqXHR, textStatus, errorThrown){
       // Log the error to the console
       console.error(

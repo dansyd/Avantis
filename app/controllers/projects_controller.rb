@@ -73,12 +73,13 @@ class ProjectsController < ApplicationController
     response = []
     user_ids.each do |id|
       user = User.find id
-      response << user.name
+      avatar_url = Cloudinary::Utils.cloudinary_url(user.avatar)
+      response << avatar_url
       project = Project.find params[:project_id]
       project.working_users << user
     end
     respond_to do |format|
-      format.json { render :json => {status: :ok, users: response} }
+      format.json { render :json => {status: :ok, avatars: response} }
     end
   end
 

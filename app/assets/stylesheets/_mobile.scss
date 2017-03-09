@@ -117,12 +117,19 @@
 .projects-wrapper {
   padding: $big-spacing;
   display: flex;
+  flex: 1;
   flex-direction: column;
+  align-items: center;
   background-color: $primary-green;
+  width: 100vw;
 }
 
 .project-item-wrapper {
   padding: $main-spacing;
+}
+
+.projects-list {
+  width: 100%;
 }
 
 .project-item {
@@ -153,13 +160,13 @@
   @extend .avatar;
   width: 3em;
   height: 3em;
-  display: inline-block;
   margin: 0 $small-spacing $small-spacing 0;;
   border: 3px solid $primary-green;
 }
 
 .add-member-project {
   border-radius: 50%;
+  box-shadow: none;
   transition: background-color 0.5s;
   width: 3em;
   height: 3em;
@@ -177,6 +184,15 @@
   padding: $main-spacing;
   &:nth-child(odd) {
     background-color: darken(white, 5);
+  }
+}
+
+.task-status {
+  display: flex;
+  align-items: center;
+  margin-bottom: $main-spacing;
+  span {
+    margin-right: $small-spacing;
   }
 }
 
@@ -201,8 +217,24 @@
   width: 80%;
 }
 
-.available-user-selected {
-  color: lightblue;
+.available-users {
+  display: flex;
+  flex-wrap: wrap;
+  margin: $main-spacing 0;
+}
+
+.team-member-label {
+  margin: 0 $small-spacing $small-spacing 0;
+}
+
+.team-member-deselected {
+  @extend .team-member-avatar;
+  border-color: white;
+  margin: 0;
+}
+
+.team-member-selected {
+  border: 3px solid $primary-green;
 }
 
 .team-member {
