@@ -1,4 +1,4 @@
-<h1>Open Pojects</h1>
+<h1>Pojects</h1>
 
 <div class="projects-wrapper">
   <% if @projects.present? %>
@@ -8,11 +8,11 @@
   <% end %>
 
   <% if @current_user.master? %>
-    <%= button_tag "New Project", :id => 'new-project' %>
+    <%= button_tag "New Project", :id => 'new-project', :class => 'new-project-btn' %>
   <% end %>
 </div>
 
 <!-- Form container for new projects/tasks -->
 <div class="form-dialog-container">
-  <div id="form-dialog" class="form-dialog"></div>  
+  <div id="form-dialog" class="form-dialog"></div>
 </div>

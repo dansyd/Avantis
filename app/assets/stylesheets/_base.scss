@@ -8,7 +8,7 @@
 body {
   font-family: 'Domine', serif;
   font-size: 16px;
-  height: 100vh;
+  min-height: 100vh;
   background-color: $primary-blue;
   color: white;
   display: flex;
@@ -17,49 +17,17 @@ body {
 
 main {
   display: flex;
+  flex-direction: column;
   flex: 1;
   justify-content: center;
   align-items: center;
-
+  padding: $big-spacing 0;
 }
 .container {
   // display: flex;
   // flex: 1;
   // justify-content: center;
   // align-items: center;
-}
-
-// ****************************
-// HEADER
-// ****************************
-
-header {
-  display: flex;
-  justify-content: center;
-}
-
-.header-wrapper {
-  min-width: $container-width;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-
-}
-
-nav {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.menu-item {
-  display: inline-block;
-  margin: $main-spacing 0;
-  padding: $small-spacing;
-  &:first-child {
-    padding-left: 0;
-  }
 }
 
 a {
@@ -71,6 +39,49 @@ h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
   margin-top: 0;
 }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// ****************************
+// HEADER
+// ****************************
+
+header {
+  display: flex;
+  justify-content: center;
+  min-height: 70px;
+}
+
+.header-wrapper {
+  min-width: $container-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img{
+  height: 40px;
+}
+
+nav {
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+.menu-item {
+  display: inline-block;
+  margin: $main-spacing 0;
+  padding: $small-spacing;
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+
 
 
 .flex-container {
@@ -85,11 +96,11 @@ h1, h2, h3 {
 }
 
 .dialog-box {
-  border-radius: 4px;
+  border-radius: $main-border-radius;
   color: $primary-slate;
   padding: $big-spacing;
   background-color: white;
-  box-shadow: 0px 5px 20px darken($primary-slate, 20);
+  @include main-shadow() ;
 }
 
 input {
@@ -110,12 +121,7 @@ textarea {
 
 button,
 input[type='submit'] {
-  padding: $small-spacing $main-spacing;
-  background: $primary-green;
-  color: white;
-  border: 0;
-  border-radius: 4px;
-  box-shadow: 0 2px 0 darken($primary-green, 20);
+  @include main-button($primary-green, white);
   &:hover {
     cursor: pointer;
   }

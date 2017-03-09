@@ -1,32 +1,37 @@
-<ul id="projects-list">
+<ul id="projects-list" class="projects-list">
   <% @projects.each do |project| %>
     <li data-id="<%= project.id %>" class="project-item">
-      <h2 class="project-name"><%= project.name %></h2>
-      <p class="project-desc"><%= project.desc %></p>
-      <p class="project-sprint">Sprint(days left): <span><%= (project.sprint - Date.today).to_i %></span></p>
+      <div class="project-item-wrapper">
+        <h2 class="project-name"><%= project.name %></h2>
+        <p class="project-desc"><%= project.desc %></p>
+        <p class="project-sprint">Sprint(days left): <span><%= (project.sprint - Date.today).to_i %></span></p>
 
-      <!-- List all users working on the project, if any -->
-      <% if project.working_users.any? %>
-        <p class="project-team">Team:
-          <% project.working_users.each do |user| %>
-            <span><%= user.name %></span>
-          <% end %>
-        </p>
-      <% end %>
+        <!-- List all users working on the project, if any -->
+        <% if project.working_users.any? %>
+          <div class="project-team">
+            <% project.working_users.each do |user| %>
+              <div class="team-member-avatar" style="background-image: url('<%= cloudinary_url user.avatar %>');"></div>
+            <% end %>
+            <% if @current_user.master? %>
+              <%= button_tag "+", :class => 'add-member-project' %>
+            <% end %>
+          </div>
+        <% end %>
 
-      <!-- Check if master. Show controls -->
-      <% if @current_user.master? %>
-        <%= button_tag "Edit", :class => 'edit-project' %>
-        <%= button_tag "Delete", :class => 'delete-project' %>
-        <%= button_tag "Add Members", :class => 'add-member-project' %>
-      <% end %>
+        <!-- Check if master. Show controls -->
+        <% if @current_user.master? %>
+          <%= button_tag "Edit", :class => 'edit-project' %>
+          <%= button_tag "Delete", :class => 'delete-project' %>
+        <% end %>
+      </div>
+
       <!-- Check if the project has any tasks  -->
       <% if project.tasks.any? %>
         <%= render "tasks_list", :project => project %>
       <% end %>
 
       <% if @current_user.master? %>
-        <%= button_tag "New Task", :id => 'new-task' %>
+        <%= button_tag "New Task", :id => 'new-task', :class => 'new-task-btn' %>
       <% end %>
 
     </li>

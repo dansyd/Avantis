@@ -1,4 +1,9 @@
 @import 'normalize';
 @import 'variables';
 @import 'base';
+
 @import 'mobile';
+
+@media (min-width:768px) {
+  @import 'tablet';
+}
