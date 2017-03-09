@@ -17,7 +17,13 @@ class User < ActiveRecord::Base
   has_many :tasks
   has_and_belongs_to_many :skills
 
+  after_destroy :delete_cloudinary_image
+
   has_secure_password
   validates :email, :presence => true, :uniqueness => true, :length => {:minimum => 5}
   validates :name, :presence => true
+
+  def delete_cloudinary_image
+      Cloudinary::Uploader.destroy( self.avatar )
+  end
 end

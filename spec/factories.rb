@@ -9,10 +9,21 @@ FactoryGirl.define do
     points 3
   end
 
-  factory :user do |f|
-    f.sequence(:name) { Faker::Name.name }
-    f.sequence(:email) { Faker::Internet.email }
-    password_digest "chicken"
+  # factory :user do |f|
+  #   f.sequence(:name) { Faker::Name.name }
+  #   f.sequence(:email) { Faker::Internet.email }
+  #   f.sequence(:avatar) { Faker::Avatar.image}
+  #   password 'chicken'
+  #   password_digest 'chicken'
+  #   master false
+  # end
+
+  factory :user do
+    name { Faker::Name.name }
+    email { Faker::Internet.email }
+    avatar { Faker::Avatar.image}
+    password 'chicken'
+    password_digest 'chicken'
     master false
   end
 

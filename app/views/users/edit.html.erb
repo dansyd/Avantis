@@ -6,6 +6,15 @@
   <%= f.label :name %>
   <%= f.text_field :name, :required => true  %>
 
+  <% if @current_user.avatar.present? %>
+    <div class="avatar" style="background-image: url('<%= cloudinary_url @current_user.avatar %>');">
+    </div>
+    <%= f.label :avatar, 'Choose a new image' %>
+  <% else %>
+    <%= f.label :avatar %>
+  <% end %>
+  <%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg' %>
+
   <%= f.label :email %>
   <%= f.email_field :email, :required => true  %>
 

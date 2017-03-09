@@ -42,3 +42,12 @@ textarea {
 .team-member {
   display: none;
 }
+
+.avatar {
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

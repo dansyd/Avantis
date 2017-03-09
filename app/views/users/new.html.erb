@@ -12,6 +12,9 @@
   <%= f.label :name %>
   <%= f.text_field :name, :required => true  %>
 
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar, :required => true, accept: 'image/png,image/gif,image/jpeg' %>
+
   <%= f.label :email %>
   <%= f.email_field :email, :required => true  %>
 
