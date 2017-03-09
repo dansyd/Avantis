@@ -160,7 +160,7 @@
 
 .add-member-project {
   border-radius: 50%;
-  box-shadow: none;
+  transition: background-color 0.5s;
   width: 3em;
   height: 3em;
 }

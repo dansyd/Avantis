@@ -71,16 +71,18 @@ $(document).ready(function() {
     var $projectsList = $('#projects-list');
     if ($projectsList.length === 0) {
       $('.projects-wrapper h2').remove();
-      $('#new-project').before('<ul id="projects-list"></ul>');
+      $('#new-project').before('<ul id="projects-list" class="projects-list"></ul>');
     };
     return "<li data-id='" + project.id + "' class='project-item'>"
-      + "<h2 class='project-name'>" + project.name + "</h2>"
-      + "<p class='project-desc'>" + project.desc + "</p>"
-      + "<p class='project-sprint'>Sprint(days left): <span>" + moment(project.sprint).diff(moment().startOf('day'), 'days') + "</span></p>"
-      + "<button name='button' type='submit' class='edit-project'>Edit</button>"
-      + " <button name='button' type='submit' class='delete-project'>Delete</button>"
-      + " <button name='button' type='submit' class='add-member-project'>Add Members</button>"
-      + " <button name='button' type='submit' id='new-task'>New Task</button>"
+      + "<div class='project-item-wrapper'>"
+        + "<h2 class='project-name'>" + project.name + "</h2>"
+        + "<p class='project-desc'>" + project.desc + "</p>"
+        + "<p class='project-sprint'>Sprint (days left): <span>" + moment(project.sprint).diff(moment().startOf('day'), 'days') + "</span></p>"
+        + "<div class='project-team'><button name='button' type='submit' class='add-member-project'>+</button></div>"
+        + "<button name='button' type='submit' class='edit-project'>Edit</button>"
+        + " <button name='button' type='submit' class='delete-project'>Delete</button>"
+        + " <button name='button' type='submit' id='new-task'>New Task</button>"
+      + "</div>"
     + "</li>";
   };
 

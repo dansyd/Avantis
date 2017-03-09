@@ -8,6 +8,9 @@
   <%= f.label :sprint %>
   <%= f.select :sprint, options_for_select([['1 Week', (Date.today + 1.week)], ['2 Weeks', Date.today + 2.weeks], ['3 Weeks', Date.today + 3.weeks], ['4 Weeks', Date.today + 4.weeks]], project.sprint), {:id => 'project-sprint'} %>
 
-  <%= f.button 'Save' %>
-  <%= button_tag 'Cancel', :type => 'button', :id => 'dialog-cancel-btn' %>
+  <div>
+    <%= f.button 'Save' %>
+    <%= button_tag 'Cancel', :type => 'button', :id => 'dialog-cancel-btn' %>  
+  </div>
+
 <% end %>

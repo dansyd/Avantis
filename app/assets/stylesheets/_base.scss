@@ -103,7 +103,7 @@ nav {
   @include main-shadow() ;
 }
 
-input {
+input, textarea {
   margin: $small-spacing 0 $big-spacing 0;
   padding: $small-spacing;
   display: block;
@@ -119,12 +119,21 @@ textarea {
   width: 100%;
 }
 
+select {
+  display: inline-block;
+  margin: $small-spacing 0 $big-spacing 0;
+  padding: $small-spacing;
+
+}
+
+textarea {
+  min-height: 8em;
+}
+
 button,
 input[type='submit'] {
   @include main-button($primary-green, white);
-  &:hover {
-    cursor: pointer;
-  }
+  outline: none;
 }
 
 footer {

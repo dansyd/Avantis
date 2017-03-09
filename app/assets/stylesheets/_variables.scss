@@ -20,6 +20,7 @@ $big-border-radius: 8px;
   color: $color;
   padding: $small-spacing $main-spacing;
   border: 0;
+  cursor: pointer;
   border-radius: $main-border-radius;
   box-shadow: 0px 2px 0px darken($bgColor, 10);
 }
