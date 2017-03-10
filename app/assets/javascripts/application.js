@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require moment
-//= require progressbar
 //= require project
 //= require_tree .
