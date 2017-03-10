@@ -1,4 +1,4 @@
-![logo](http://res.cloudinary.com/dt9ppmca8/image/upload/v1489106714/avantis-logo_qodw0l.png)
+![logo](http://res.cloudinary.com/dt9ppmca8/image/upload/v1489109746/avantis-logo_or6usj.jpg)
 
 ## About
 
