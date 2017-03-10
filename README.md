@@ -12,8 +12,10 @@ Avantis is a project management tool based on the scrum agile methodology. The i
 To test the app, please create an account by filling up the form in the signup page.
 At this point you don't have access to any projects in your dashboard.
 You can log in as the admin(master) with these credential:
+
 email: admin@admin.com
 password: admin
+
 Go to the dashboard and add yourself to a project. You can then log back in with the account you originally created. You are now able to see the project you assigned yourself to and take available tasks.
 
 ## Features
