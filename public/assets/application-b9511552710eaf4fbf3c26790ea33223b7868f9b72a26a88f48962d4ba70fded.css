@@ -1,0 +1,2447 @@
+@import url("https://fonts.googleapis.com/css?family=Domine|Montserrat:300");
+/* line 4, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 8, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+body {
+  font-family: 'Domine', serif;
+  font-size: 16px;
+  min-height: 100vh;
+  background-color: #396a92;
+  background: -webkit-linear-gradient(315deg, #396a92 20%, #28ada0 100%);
+  background: linear-gradient(135deg, #396a92 20%, #28ada0 100%);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 19, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2em;
+}
+
+/* line 34, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 39, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+}
+
+/* line 44, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 54, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 70px;
+}
+
+/* line 60, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.header-wrapper {
+  min-width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 67, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.logo img {
+  height: 40px;
+}
+
+/* line 71, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+nav {
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* line 76, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.menu-item {
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+/* line 80, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.menu-item:first-child {
+  padding-left: 0;
+}
+
+/* line 88, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.flex-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0vh;
+  left: 0vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 99, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.dialog-box {
+  border-radius: 4px;
+  color: #556270;
+  padding: 2em;
+  background-color: white;
+  box-shadow: 0px 5px 20px #292f36;
+}
+
+/* line 107, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input, textarea {
+  margin: 0.5em 0 2em 0;
+  padding: 0.5em;
+  display: block;
+}
+/* line 111, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input:last-child, textarea:last-child {
+  margin-bottom: 0;
+}
+
+/* line 116, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+  width: 100%;
+}
+
+/* line 123, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+select {
+  display: inline-block;
+  margin: 0.5em 0 2em 0;
+  padding: 0.5em;
+}
+
+/* line 130, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+textarea {
+  min-height: 8em;
+}
+
+/* line 134, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+button,
+input[type='submit'] {
+  background-color: #28ada0;
+  color: white;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #1e847a;
+  outline: none;
+}
+
+/* line 140, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .7em;
+  padding: 1em 0;
+}
+@import url("https://fonts.googleapis.com/css?family=Domine|Montserrat:300");
+/* line 4, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 8, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+body {
+  font-family: 'Domine', serif;
+  font-size: 16px;
+  min-height: 100vh;
+  background-color: #396a92;
+  background: -webkit-linear-gradient(315deg, #396a92 20%, #28ada0 100%);
+  background: linear-gradient(135deg, #396a92 20%, #28ada0 100%);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 19, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2em;
+}
+
+/* line 34, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 39, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+}
+
+/* line 44, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 54, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 70px;
+}
+
+/* line 60, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.header-wrapper {
+  min-width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 67, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.logo img {
+  height: 40px;
+}
+
+/* line 71, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+nav {
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* line 76, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.menu-item {
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+/* line 80, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.menu-item:first-child {
+  padding-left: 0;
+}
+
+/* line 88, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.flex-container, .form-dialog-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0vh;
+  left: 0vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 99, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.dialog-box, .login-wrapper, .signup-wrapper, .form-dialog {
+  border-radius: 4px;
+  color: #556270;
+  padding: 2em;
+  background-color: white;
+  box-shadow: 0px 5px 20px #292f36;
+}
+
+/* line 107, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input, textarea {
+  margin: 0.5em 0 2em 0;
+  padding: 0.5em;
+  display: block;
+}
+/* line 111, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input:last-child, textarea:last-child {
+  margin-bottom: 0;
+}
+
+/* line 116, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+  width: 100%;
+}
+
+/* line 123, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+select {
+  display: inline-block;
+  margin: 0.5em 0 2em 0;
+  padding: 0.5em;
+}
+
+/* line 130, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+textarea {
+  min-height: 8em;
+}
+
+/* line 134, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+button,
+input[type='submit'] {
+  background-color: #28ada0;
+  color: white;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #1e847a;
+  outline: none;
+}
+
+/* line 140, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .7em;
+  padding: 1em 0;
+}
+
+/* line 8, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  float: right;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 22, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle .span {
+  height: 7px;
+  background: #28ada0;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+/* line 30, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle.on #one {
+  -webkit-transform: rotate(45deg) translateX(6px) translateY(6px);
+          transform: rotate(45deg) translateX(6px) translateY(6px);
+}
+
+/* line 34, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle.on #two {
+  opacity: 0;
+}
+
+/* line 38, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle.on #three {
+  -webkit-transform: rotate(-45deg) translateX(10px) translateY(-12px);
+          transform: rotate(-45deg) translateX(10px) translateY(-12px);
+}
+
+/* line 42, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#resize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 57, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#resize nav {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 64, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#resize nav a {
+  color: #28ada0;
+  font-size: 2em;
+  margin: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* line 72, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#resize.active {
+  visibility: visible;
+  opacity: 0.9;
+}
+
+/* line 81, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.main-heading {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  padding: 2em;
+}
+/* line 88, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.main-heading h1 {
+  margin: 0;
+}
+/* line 91, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.main-heading img {
+  width: 12em;
+  margin: 1em;
+}
+
+/* line 101, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.login-wrapper {
+  margin: 0 auto;
+  width: 85%;
+}
+
+/* line 111, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.signup-wrapper {
+  margin: 0 auto;
+  width: 85%;
+}
+
+/* line 121, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.avatar, .team-member-avatar, .team-member-deselected {
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 137, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.projects-wrapper,
+.project-item-wrapper,
+.projects-list {
+  width: 100%;
+}
+
+/* line 143, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.projects-wrapper {
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 151, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.project-item-wrapper {
+  padding: 1em;
+}
+
+/* line 155, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.project-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #396a92;
+  margin-bottom: 2em;
+  color: white;
+  box-shadow: 0px 5px 20px #292f36;
+  border-radius: 8px;
+}
+/* line 164, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.project-item:last-child {
+  margin-bottom: 0.5em;
+}
+
+/* line 169, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.new-project-btn {
+  background-color: #396a92;
+  color: white;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #2b4f6d;
+  margin: 1em auto;
+}
+
+/* line 174, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.project-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+/* line 180, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member-avatar, .team-member-deselected {
+  width: 3em;
+  height: 3em;
+  margin: 0 0.5em 0.5em 0;
+  border: 3px solid #28ada0;
+}
+
+/* line 188, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.add-member-project {
+  border-radius: 50%;
+  box-shadow: none;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  width: 3em;
+  height: 3em;
+}
+
+/* line 199, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.tasks-list,
+.task-item {
+  width: 100%;
+}
+
+/* line 204, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.tasks-list {
+  color: #556270;
+}
+
+/* line 208, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.task-item {
+  background-color: white;
+  padding: 1em;
+}
+/* line 211, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.task-item:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/* line 216, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.task-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1em;
+}
+/* line 220, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.task-status span {
+  margin-right: 0.5em;
+}
+
+/* line 225, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.new-task-btn {
+  background-color: white;
+  color: #556270;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #e6e6e6;
+  margin: 1em auto;
+}
+
+/* line 235, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.form-dialog-container {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 241, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.form-dialog {
+  width: 80%;
+}
+
+/* line 246, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.available-users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1em 0;
+}
+
+/* line 252, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member-label {
+  margin: 0 0.5em 0.5em 0;
+}
+
+/* line 256, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member-deselected {
+  border-color: white;
+  margin: 0;
+}
+
+/* line 262, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member-selected {
+  border: 3px solid #28ada0;
+}
+
+/* line 266, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member {
+  display: none;
+}
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* line 14, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+/* line 28, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 36, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 50, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+/* line 63, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 73, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 82, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 93, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 106, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+/* line 116, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 126, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 136, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 145, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 155, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 166, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 174, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 183, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 192, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 200, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 204, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 215, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 224, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 233, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 241, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 253, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 269, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 279, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 290, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 301, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 313, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+/* line 324, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 337, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 351, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 360, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 369, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 379, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 389, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+/* line 398, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 408, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+/* line 421, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 430, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 441, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 449, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+/* line 460, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[hidden] {
+  display: none;
+}
+/* line 2, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_tablet.scss */
+#resize, #toggle {
+  visibility: hidden;
+}
+
+/* line 5, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_tablet.scss */
+nav {
+  display: block;
+}
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+@import url("https://fonts.googleapis.com/css?family=Domine|Montserrat:300");
+@import url("https://fonts.googleapis.com/css?family=Domine|Montserrat:300");
+/* line 13, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+/* line 27, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 35, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 49, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+/* line 62, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 72, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 81, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 92, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 105, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+/* line 115, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 125, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 135, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 144, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 154, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 165, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 173, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 182, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 191, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 199, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 203, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 214, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 223, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 232, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 240, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 252, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 268, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 278, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 289, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 300, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 312, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+/* line 323, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 336, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 350, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 359, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 368, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 378, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 388, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+/* line 397, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 407, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+/* line 420, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 429, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 440, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 448, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+/* line 459, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 4, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 8, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+body {
+  font-family: 'Domine', serif;
+  font-size: 16px;
+  min-height: 100vh;
+  background-color: #396a92;
+  background: -webkit-linear-gradient(315deg, #396a92 20%, #28ada0 100%);
+  background: linear-gradient(135deg, #396a92 20%, #28ada0 100%);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 19, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2em;
+}
+
+/* line 34, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 39, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+}
+
+/* line 44, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 54, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 70px;
+}
+
+/* line 60, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.header-wrapper {
+  min-width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 67, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.logo img {
+  height: 40px;
+}
+
+/* line 71, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+nav {
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* line 76, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.menu-item {
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+/* line 80, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.menu-item:first-child {
+  padding-left: 0;
+}
+
+/* line 88, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.flex-container, .form-dialog-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0vh;
+  left: 0vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 99, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.dialog-box, .login-wrapper, .signup-wrapper, .form-dialog {
+  border-radius: 4px;
+  color: #556270;
+  padding: 2em;
+  background-color: white;
+  box-shadow: 0px 5px 20px #292f36;
+}
+
+/* line 107, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input, textarea {
+  margin: 0.5em 0 2em 0;
+  padding: 0.5em;
+  display: block;
+}
+/* line 111, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input:last-child, textarea:last-child {
+  margin-bottom: 0;
+}
+
+/* line 116, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+  width: 100%;
+}
+
+/* line 123, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+select {
+  display: inline-block;
+  margin: 0.5em 0 2em 0;
+  padding: 0.5em;
+}
+
+/* line 130, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+textarea {
+  min-height: 8em;
+}
+
+/* line 134, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+button,
+input[type='submit'] {
+  background-color: #28ada0;
+  color: white;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #1e847a;
+  outline: none;
+}
+
+/* line 140, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .7em;
+  padding: 1em 0;
+}
+
+/* line 4, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 8, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+body {
+  font-family: 'Domine', serif;
+  font-size: 16px;
+  min-height: 100vh;
+  background-color: #396a92;
+  background: -webkit-linear-gradient(315deg, #396a92 20%, #28ada0 100%);
+  background: linear-gradient(135deg, #396a92 20%, #28ada0 100%);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 19, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2em;
+}
+
+/* line 34, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 39, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+}
+
+/* line 44, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 54, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 70px;
+}
+
+/* line 60, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.header-wrapper {
+  min-width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 67, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.logo img {
+  height: 40px;
+}
+
+/* line 71, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+nav {
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+/* line 76, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.menu-item {
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+/* line 80, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.menu-item:first-child {
+  padding-left: 0;
+}
+
+/* line 88, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.flex-container, .form-dialog-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0vh;
+  left: 0vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 99, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+.dialog-box, .login-wrapper, .signup-wrapper, .form-dialog {
+  border-radius: 4px;
+  color: #556270;
+  padding: 2em;
+  background-color: white;
+  box-shadow: 0px 5px 20px #292f36;
+}
+
+/* line 107, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input, textarea {
+  margin: 0.5em 0 2em 0;
+  padding: 0.5em;
+  display: block;
+}
+/* line 111, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input:last-child, textarea:last-child {
+  margin-bottom: 0;
+}
+
+/* line 116, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+  width: 100%;
+}
+
+/* line 123, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+select {
+  display: inline-block;
+  margin: 0.5em 0 2em 0;
+  padding: 0.5em;
+}
+
+/* line 130, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+textarea {
+  min-height: 8em;
+}
+
+/* line 134, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+button,
+input[type='submit'] {
+  background-color: #28ada0;
+  color: white;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #1e847a;
+  outline: none;
+}
+
+/* line 140, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_base.scss */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .7em;
+  padding: 1em 0;
+}
+
+/* line 8, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  float: right;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 22, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle .span {
+  height: 7px;
+  background: #28ada0;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+/* line 30, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle.on #one {
+  -webkit-transform: rotate(45deg) translateX(6px) translateY(6px);
+          transform: rotate(45deg) translateX(6px) translateY(6px);
+}
+
+/* line 34, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle.on #two {
+  opacity: 0;
+}
+
+/* line 38, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#toggle.on #three {
+  -webkit-transform: rotate(-45deg) translateX(10px) translateY(-12px);
+          transform: rotate(-45deg) translateX(10px) translateY(-12px);
+}
+
+/* line 42, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#resize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 57, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#resize nav {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 64, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#resize nav a {
+  color: #28ada0;
+  font-size: 2em;
+  margin: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* line 72, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+#resize.active {
+  visibility: visible;
+  opacity: 0.9;
+}
+
+/* line 81, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.main-heading {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  padding: 2em;
+}
+/* line 88, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.main-heading h1 {
+  margin: 0;
+}
+/* line 91, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.main-heading img {
+  width: 12em;
+  margin: 1em;
+}
+
+/* line 101, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.login-wrapper {
+  margin: 0 auto;
+  width: 85%;
+}
+
+/* line 111, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.signup-wrapper {
+  margin: 0 auto;
+  width: 85%;
+}
+
+/* line 121, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.avatar, .team-member-avatar, .team-member-deselected {
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 137, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.projects-wrapper,
+.project-item-wrapper,
+.projects-list {
+  width: 100%;
+}
+
+/* line 143, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.projects-wrapper {
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 151, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.project-item-wrapper {
+  padding: 1em;
+}
+
+/* line 155, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.project-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #396a92;
+  margin-bottom: 2em;
+  color: white;
+  box-shadow: 0px 5px 20px #292f36;
+  border-radius: 8px;
+}
+/* line 164, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.project-item:last-child {
+  margin-bottom: 0.5em;
+}
+
+/* line 169, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.new-project-btn {
+  background-color: #396a92;
+  color: white;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #2b4f6d;
+  margin: 1em auto;
+}
+
+/* line 174, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.project-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+/* line 180, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member-avatar, .team-member-deselected {
+  width: 3em;
+  height: 3em;
+  margin: 0 0.5em 0.5em 0;
+  border: 3px solid #28ada0;
+}
+
+/* line 188, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.add-member-project {
+  border-radius: 50%;
+  box-shadow: none;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  width: 3em;
+  height: 3em;
+}
+
+/* line 199, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.tasks-list,
+.task-item {
+  width: 100%;
+}
+
+/* line 204, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.tasks-list {
+  color: #556270;
+}
+
+/* line 208, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.task-item {
+  background-color: white;
+  padding: 1em;
+}
+/* line 211, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.task-item:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/* line 216, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.task-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1em;
+}
+/* line 220, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.task-status span {
+  margin-right: 0.5em;
+}
+
+/* line 225, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.new-task-btn {
+  background-color: white;
+  color: #556270;
+  padding: 0.5em 1em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #e6e6e6;
+  margin: 1em auto;
+}
+
+/* line 235, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.form-dialog-container {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 241, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.form-dialog {
+  width: 80%;
+}
+
+/* line 246, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.available-users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1em 0;
+}
+
+/* line 252, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member-label {
+  margin: 0 0.5em 0.5em 0;
+}
+
+/* line 256, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member-deselected {
+  border-color: white;
+  margin: 0;
+}
+
+/* line 262, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member-selected {
+  border: 3px solid #28ada0;
+}
+
+/* line 266, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_mobile.scss */
+.team-member {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  /* line 2, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_tablet.scss */
+  #resize, #toggle {
+    visibility: hidden;
+  }
+
+  /* line 5, /Users/danielepeviani/Projects/Avantis/Avantis-App/app/assets/stylesheets/_tablet.scss */
+  nav {
+    display: block;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
