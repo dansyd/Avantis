@@ -5,6 +5,10 @@ $(document).ready(function() {
     $("#resize").toggleClass("active");
   });
 
+  var ProgressBar = require('progressbar.js');
+
+
+
   // *************************************
   // PROJECT
   // *************************************
@@ -38,6 +42,7 @@ $(document).ready(function() {
       project.create($(this), function() {
         var newProjectUI = createNewProjectElement();
         $('#projects-list').append(newProjectUI);
+        progressBar();
       });
     } else {
       project.update(project.id, $(this), function() {
@@ -89,6 +94,7 @@ $(document).ready(function() {
   // *************************************
   // MEMBERS - PROJECT
   // *************************************
+
 
   // Add member to project btn click with event delegation
   $('.projects-wrapper').on('click', '.add-member-project', function() {
@@ -259,6 +265,20 @@ $(document).ready(function() {
     $('.form-dialog-container').fadeOut(100, function() {
       $('#form-dialog').empty();
     });
+  };
+
+  function progressBar() {
+    var totalPointsBar = new ProgressBar.Circle(container, {
+      strokeWidth: 6,
+      easing: 'easeInOut',
+      duration: 1400,
+      color: '#FFEA82',
+      trailColor: '#eee',
+      trailWidth: 1,
+      svgStyle: null
+    });
+
+    bar.animate(1.0);
   }
 
 });

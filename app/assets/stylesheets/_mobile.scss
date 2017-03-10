@@ -84,6 +84,7 @@
   justify-content: center;
   align-items: center;
   flex-flow: wrap;
+  padding: $big-spacing;
   h1 {
     margin: 0;
   }
@@ -133,22 +134,22 @@
 
 // *** projects ***
 
+.projects-wrapper,
+.project-item-wrapper,
+.projects-list  {
+  width: 100%;
+}
+
 .projects-wrapper {
   padding: $big-spacing;
   display: flex;
   flex: 1;
   flex-direction: column;
   align-items: center;
-  // background-color: $primary-green;
-  width: 100vw;
 }
 
 .project-item-wrapper {
   padding: $main-spacing;
-}
-
-.projects-list {
-  width: 100%;
 }
 
 .project-item {
@@ -194,6 +195,11 @@
 
 
 // *** tasks ***
+
+.tasks-list,
+.task-item {
+  width: 100%;
+}
 
 .tasks-list {
   color: $primary-slate;
