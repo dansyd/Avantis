@@ -76,8 +76,8 @@ $(document).ready(function() {
     };
     return "<li data-id='" + project.id + "' class='project-item'>"
       + "<div class='project-item-wrapper'>"
-        + "<h2 class='project-name'>" + project.name + "</h2>"
-        + "<p class='project-desc'>" + project.desc + "</p>"
+        + "<h2 class='project-name'>" + escapeHTML(project.name) + "</h2>"
+        + "<p class='project-desc'>" + escapeHTML(project.desc) + "</p>"
         + "<p class='project-sprint'>Sprint (days left): <span>" + moment(project.sprint).diff(moment().startOf('day'), 'days') + "</span></p>"
         + "<div class='project-team'><button name='button' type='submit' class='add-member-project'>+</button></div>"
         + "<button name='button' type='submit' class='edit-project'>Edit</button>"
@@ -196,8 +196,8 @@ $(document).ready(function() {
       $projectParent.find('#new-task').before($tasksList);
     };
     return "<li data-id='" + task.id + "' class='task-item'>"
-      + "<h3 class='task-name'>" + task.name + "</h3>"
-      + "<p class='task-desc'>" + task.desc + "</p>"
+      + "<h3 class='task-name'>" + escapeHTML(task.name) + "</h3>"
+      + "<p class='task-desc'>" + escapeHTML(task.desc) + "</p>"
       + "<p class='task-points'>Points: " + task.points + "</p>"
       + "<button name='button' type='submit' class='edit-task'>Edit</button>"
       + " <button name='button' type='submit' class='delete-task'>Delete</button>"
@@ -262,5 +262,11 @@ $(document).ready(function() {
       $('#form-dialog').empty();
     });
   };
+
+  // Escaping HTML tag for security
+  function escapeHTML(str) {
+    var $div = $('<div></div>').append(document.createTextNode(str));
+    return $div.html();
+  }
 
 });
