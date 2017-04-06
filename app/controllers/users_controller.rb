@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Account created successfully. Welcome to Avantis!"
+      # Adding projects automatically to allow demo of app
+      projects = Project.all
+      projects.each do |proj|
+        @user.projects << proj
+      end
       redirect_to root_path
     else
       render :new
